@@ -1,13 +1,22 @@
 #!groovy
 
 pipeline {
-  agent none
+  agent {
+    docker {
+      image 'node:6-alpine' 
+      args '-p 3000:3000' 
+    }
+  }
   stages {
 
-    stage('Test') {
-      agent any
+    stage('Build') {
       steps {
          sh 'npm install ./sampleWebApp'
+      }
+    }
+
+    stage('Test') {
+      steps {
          sh 'npm test ./sampleWebApp'
       }
     }
