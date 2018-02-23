@@ -16,7 +16,7 @@ pipeline {
          sh 'npm test'
       }
     }
-
+//testing
     stage('Docker Build') {
       agent any
       steps {
