@@ -11,13 +11,13 @@ pipeline {
 
     stage('Build') {
       steps {
-         sh 'npm install ./sampleWebApp'
+         sh 'pushd sampleWebApp; npm install; popd'
       }
     }
 
     stage('Test') {
       steps {
-         sh 'npm test ./sampleWebApp'
+         sh 'pushd sampleWebApp; npm test; popd'
       }
     }
 
