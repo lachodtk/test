@@ -7,8 +7,8 @@ pipeline {
     stage('Test') {
       agent any
       steps {
-         sh './sampleWebApp/npm install'
-         sh './sampleWebApp/npm test'
+         sh 'npm install ./sampleWebApp'
+         sh 'npm test ./sampleWebApp'
       }
     }
 
