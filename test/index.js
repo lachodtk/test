@@ -1,19 +1,21 @@
 var test = require('tape');
 var request = require('supertest');
 var app = require('../myApp');
+const os = require('os');
 
-test('Correct users returned', function (t) {
+
+test('Correct message returned', function (t) {
   request(app)
-    .get('/hello/:name lazaro')
+    .get('/hello/john')
     .expect('Content-Type', /json/)
     .expect(200)
     .end(function (err, res) {
-      var expectedUser = res.body.name ;
-      var expectedHostname = res.hostname;
+      var expectedHostname = os.hostname();
+      var expectedBody = ({ message : 'Hello John from ' + expectedHostname });
 
       t.error(err, 'No error');
-      t.same(res.body.expect, expectedUser, 'Users as expected');
-      t.same(res.hostname, expectedHostname, 'Hostname as expected');
+      t.same(res.body, expectedBody, 'Body as expected');
+      t.same(os.hostname(), expectedHostname, 'Hostname as expected');
       t.end();
     });
 });
