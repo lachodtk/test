@@ -17,14 +17,14 @@ pipeline {
 
     stage('Test') {
       steps {
-         sh 'pushd sampleWebApp; npm test; popd'
+         sh 'npm test'
       }
     }
 
     stage('Docker Build') {
       agent any
       steps {
-        sh 'docker build -t samplewebapp_webapp ./sampleWebApp'
+        sh 'docker build -t webapp .'
       }
     }
   }
