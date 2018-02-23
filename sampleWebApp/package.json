@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lachodtk/test/testing-api.git"
+    "url": "https://github.com/lachodtk/test/tree/master/sampleWebApp"
   },
   "author": "Lazaro Ribas <lachodtk@gmail.com>",
   "license": "ISC",

@@ -14,7 +14,6 @@ test('Correct users returned', function (t) {
       t.error(err, 'No error');
       t.same(res.body.expect, expectedUser, 'Users as expected');
       t.same(res.hostname, expectedHostname, 'Hostname as expected');
-      t.assert(res.hostname, 'Bad Hostname', 'Hostname as expected');
       t.end();
     });
 });
