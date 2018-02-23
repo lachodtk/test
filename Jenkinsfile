@@ -11,7 +11,7 @@ pipeline {
 
     stage('Build') {
       steps {
-         sh 'pushd sampleWebApp; npm install; popd'
+         sh 'npm install'
       }
     }
 
