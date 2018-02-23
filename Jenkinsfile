@@ -4,13 +4,13 @@ pipeline {
   agent none
   stages {
 
-    /*stage('Test') {
+    stage('Test') {
       agent any
       steps {
          sh 'npm install ./sampleWebApp'
          sh 'npm test ./sampleWebApp'
       }
-    }*/
+    }
 
     stage('Docker Build') {
       agent any
