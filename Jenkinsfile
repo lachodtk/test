@@ -3,10 +3,14 @@
 pipeline {
   agent none
   stages {
-    stage('Test'){
+
+    stage('Test') {
+      agent any
+      steps {
          sh 'npm install'
          sh 'npm test'
-       }
+      }
+    }
 
     stage('Docker Build') {
       agent any
